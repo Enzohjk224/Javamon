@@ -1,18 +1,14 @@
+
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        Label label = new Label("JavaFX funcionando!");
-
-        Scene scene = new Scene(label, 400, 200);
-
-        stage.setTitle("Meu JavaFX");
-        stage.setScene(scene);
+        Menu menu = new Menu();
+        stage.setTitle("JAVAMON");
+        stage.setScene(menu.criarCena(stage));
         stage.show();
     }
 
