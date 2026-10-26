@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 public class SelectPokemon{
 
     private boolean selectPokemon = false;
+
+    public Main.Pokemon pokemonSelect;
     public Scene criarCena(Stage stage) {
         Label tituloTela = new Label("Selecione seu pokemon");
         Button select = new Button("Exemplo de seleção");
@@ -16,6 +18,7 @@ public class SelectPokemon{
 
         select.setOnAction(event ->{
             selectPokemon = true;
+            pokemonSelect = new Main.Pokemon("Charmander", 50, 10);
         });
 
         iniciar.setOnAction(event -> {
@@ -23,7 +26,7 @@ public class SelectPokemon{
                 System.out.println("Selecione um pokemon");
             }else {
                 Batalha batalha = new Batalha();
-                stage.setScene(batalha.criarCena(stage));
+                stage.setScene(batalha.criarCena(stage, pokemonSelect));
             }
         });
 
